@@ -1,4 +1,5 @@
-# chat-demo
+<!-- 原站点名：chat-demo -->
+# ds-web-api
 
 English | [简体中文](README.zh-CN.md)
 
@@ -11,8 +12,8 @@ You can [try the app online](https://deepseek-ai.github.io/chat-demo/) or downlo
 Install Node.js 22.12+ and pnpm, then run:
 
 ```sh
-git clone https://github.com/deepseek-ai/chat-demo.git
-cd chat-demo
+git clone https://github.com/MoonCakeMC/ds-web-api.git
+cd ds-web-api
 pnpm install
 pnpm dev
 ```
@@ -42,6 +43,16 @@ Your API key and settings are stored in the browser's localStorage. Conversation
 History import and export in Settings use ZIP archives. After confirmation and successful validation, importing replaces all local conversations and attachments. Exports include conversations and locally available original images, but exclude API keys, settings, and original non-image attachments. See the [history import/export documentation (Chinese)](src/services/chat/history/README.md) for the archive format and preservation details.
 
 Settings → Data → Delete all chats clears all local conversations, original attachments, and unsent drafts after confirmation. It stops ongoing replies and returns to a new chat. Your API key and settings are preserved; files already uploaded to the API service are not deleted.
+
+## Deploy to Vercel
+
+This repository includes [vercel.json](vercel.json), so Vercel can build and serve the app without extra configuration.
+
+1. Import the repository at [Vercel](https://vercel.com/new).
+2. Keep the detected settings: install command `pnpm install --frozen-lockfile`, build command `pnpm build`, and output directory `dist`.
+3. Click **Deploy**. Every push to `main` triggers a production deployment automatically, while other branches and pull requests get preview deployments.
+
+The production domain can be changed under **Settings → Domains** in the Vercel project. The build uses Node.js 22.12 or later.
 
 ## Development
 

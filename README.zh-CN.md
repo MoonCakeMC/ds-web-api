@@ -1,4 +1,5 @@
-# chat-demo
+<!-- 原站点名：chat-demo -->
+# ds-web-api
 
 [English](README.md) | 简体中文
 
@@ -11,8 +12,8 @@
 准备 Node.js 22.12+ 和 pnpm：
 
 ```sh
-git clone https://github.com/deepseek-ai/chat-demo.git
-cd chat-demo
+git clone https://github.com/MoonCakeMC/ds-web-api.git
+cd ds-web-api
 pnpm install
 pnpm dev
 ```
@@ -42,6 +43,16 @@ API Key 和设置保存在浏览器 localStorage，会话及附件原件保存�
 设置中的历史导入导出使用 ZIP 格式。导入会在确认并校验成功后替换全部本地会话和附件；导出包含会话与本地可用的图片原件，不包含 API Key、设置或非图片附件原件。格式与保留范围见[历史导入导出](src/services/chat/history/README.md)。
 
 设置 → 数据管理 → 删除所有对话，会在确认后清空全部本地会话、附件原件和未发送的草稿，停止正在生成的回复并回到新对话。API Key 和其他设置保留，已上传到 API 服务的文件不受影响。
+
+## 部署到 Vercel
+
+仓库已包含 [vercel.json](vercel.json)，Vercel 可以直接完成构建和托管，无需额外配置。
+
+1. 前往 [Vercel](https://vercel.com/new) 导入本仓库。
+2. 保持检测到的配置：安装命令 `pnpm install --frozen-lockfile`、构建命令 `pnpm build`、输出目录 `dist`。
+3. 点击 **Deploy**。之后每次 push 到 `main` 都会自动执行生产部署，其他分支和 Pull Request 会生成预览部署。
+
+生产域名可以在 Vercel 项目的 **Settings → Domains** 中修改。构建使用 Node.js 22.12 或更高版本。
 
 ## 开发
 

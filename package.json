@@ -1,10 +1,13 @@
 {
-  "name": "chat-demo",
+  "name": "ds-web-api",
   "version": "0.1.1",
-  "description": "基于 DeepSeek API 的静态聊天示例。",
+  "description": "ds-web-api：基于 DeepSeek API 的静态聊天应用。",
   "license": "MIT",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "rspack serve -c rspack.config.ts",
     "build": "rm -rf dist && NODE_ENV=production rspack build -c rspack.config.ts",
